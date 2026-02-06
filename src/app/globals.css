@@ -1,0 +1,170 @@
+@import 'tailwindcss';
+
+:root {
+  --bg-page: #000000;
+  --bg-card: rgba(10, 10, 10, 0.6);
+  --bg-glass: rgba(255, 255, 255, 0.03);
+
+  --text-primary: #ffffff;
+  --text-secondary: #999999;
+  --text-tertiary: #555555;
+
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-highlight: rgba(255, 255, 255, 0.15);
+
+  --accent-glow: #4ade80;
+
+  --radius-xl: 32px;
+  --radius-l: 24px;
+  --radius-m: 12px;
+  --content-width: 1600px;
+}
+
+@theme {
+  --color-background: var(--bg-page);
+  --color-foreground: var(--text-primary);
+  --font-heading: var(--font-jakarta);
+  --font-body: var(--font-inter);
+}
+
+/* =============================================
+   RESET & BASE
+   ============================================= */
+
+html {
+  scroll-behavior: auto;
+  /* Handled by Lenis */
+}
+
+body {
+  background-color: var(--bg-page);
+  color: var(--text-primary);
+  font-family: var(--font-inter);
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* 
+   Grain Overlay Animation 
+   (We keep this in CSS as it's performant) 
+*/
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.05) 1px, transparent 0);
+  background-size: 80px 80px;
+  pointer-events: none;
+  z-index: 0;
+  animation: pulse-glow 8s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+.grain-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.035;
+  /* Subtler */
+}
+
+/* =============================================
+   LENIS (SMOOTH SCROLL)
+   ============================================= */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* =============================================
+   UTILITIES
+   ============================================= */
+.chrome-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-l);
+  overflow: hidden;
+  position: relative;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    0 20px 60px -15px rgba(0, 0, 0, 0.7);
+  transition: transform 0.1s ease-out, border-color 0.3s;
+  will-change: transform;
+}
+
+.chrome-card:hover {
+  border-color: var(--border-highlight);
+}
+
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--accent-glow);
+  font-size: 0.8rem;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-weight: 600;
+}
+
+.label-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--accent-glow);
+  border-radius: 50%;
+  box-shadow: 0 0 12px var(--accent-glow);
+  animation: pulse-dot 2.5s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.5;
+    transform: scale(1.3);
+  }
+}
+
+/* Text Gradient Utility */
+.text-gradient {
+  background: linear-gradient(135deg, #fff 20%, #999 80%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
