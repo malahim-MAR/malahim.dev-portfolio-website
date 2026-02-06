@@ -5,28 +5,36 @@ import Image from 'next/image';
 
 const projects = [
     {
-        title: "E-Commerce Revolution",
+        title: "Dropper - Delivery App",
+        category: "Mobile Application",
+        description: "A delivery management mobile application built using React Native, designed to handle real-world logistics workflows with live location tracking and real-time chat.",
+        image: "https://images.unsplash.com/photo-1526367790999-015078648c7e?auto=format&fit=crop&q=80&w=1200",
+        link: "#",
+        tech: ["React Native", "Expo", "TanStack Query", "REST API"]
+    },
+    {
+        title: "Admin Panel - Dropper",
+        category: "Web Dashboard",
+        description: "An admin dashboard developed using Next.js to manage operations of the Dropper delivery platform, featuring driver verification workflows and real-time monitoring.",
+        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200",
+        link: "#",
+        tech: ["Next.js", "Tailwind CSS", "Role-based Access", "Analytics"]
+    },
+    {
+        title: "Project Management System",
         category: "Web Application",
-        description: "A high-performance storefront with real-time inventory and premium checkout experience.",
-        image: "https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&q=80&w=1200",
-        link: "#",
-        tech: ["Next.js", "Tailwind CSS", "Supabase"]
-    },
-    {
-        title: "AI Dashboard",
-        category: "Product Design",
-        description: "Innovative data visualization tool with AI-driven insights for enterprise teams.",
-        image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1200",
-        link: "#",
-        tech: ["React", "D3.js", "Node.js"]
-    },
-    {
-        title: "Portfolio 2026",
-        category: "Interactive Website",
-        description: "An award-winning personal website design with fluid animations and 3D interactions.",
+        description: "A web-based project management system developed to replace manual Excel-based workflows for an agency, featuring real-time chat and automated performance reports.",
         image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200",
         link: "#",
-        tech: ["Framer Motion", "Lenis", "Three.js"]
+        tech: ["React", "Tailwind CSS", "TanStack Query", "PDF Generation"]
+    },
+    {
+        title: "Blogging App With Dashboard",
+        category: "Hobby Project",
+        description: "A blogging platform with an admin-style dashboard for content management, user roles, and integrated backend services for data storage.",
+        image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&q=80&w=1200",
+        link: "#",
+        tech: ["Next.js", "Tailwind CSS", "DaisyUI", "Auth"]
     }
 ];
 
@@ -51,7 +59,7 @@ export default function Projects() {
                         className="font-heading font-extrabold text-[clamp(2.5rem,8vw,6rem)] leading-[0.9] tracking-tighter"
                     >
                         Featured <br />
-                        <span className="text-neutral-500">Design</span> Projects
+                        <span className="text-neutral-500">Development</span> Projects
                     </motion.h2>
                 </div>
                 <motion.div
@@ -99,7 +107,7 @@ export default function Projects() {
                                 whileHover={{ x: 10 }}
                                 className="inline-flex items-center gap-2 text-lg font-bold group/link"
                             >
-                                View Project
+                                View Case Study
                                 <ArrowUpRight className="group-hover/link:rotate-45 transition-transform" />
                             </motion.a>
                         </div>

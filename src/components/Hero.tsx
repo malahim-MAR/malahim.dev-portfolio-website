@@ -65,7 +65,7 @@ export default function Hero() {
                 transition={{ delay: 1, duration: 0.8 }}
                 className="mt-12 text-xl text-neutral-400 max-w-2xl text-center leading-relaxed"
             >
-                Full-Stack Developer focused on building immersive digital experiences
+                React Native & Frontend Developer focused on building immersive mobile and digital experiences
                 that combine robust engineering with premium aesthetics.
             </motion.p>
 

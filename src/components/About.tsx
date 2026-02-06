@@ -30,15 +30,17 @@ export default function About() {
 
     const experienceItems = [
         {
-            year: "2023 - Present",
-            title: "Full Stack Developer",
-            desc: "Freelance & Contract • Building complex web applications and mobile solutions using Next.js and React Native.",
+            year: "August 2025 - Present",
+            title: "React Native & Frontend Developer",
+            company: "Zero Vertical labs, Pakistan",
+            desc: "Developed and maintained production-ready mobile applications. Implemented core features including real-time tracking, scheduled workflows, and dynamic data handling using TanStack Query.",
             active: true
         },
         {
-            year: "2021 - 2023",
-            title: "Frontend Developer",
-            desc: "Agency Work • Specializing in building high-performance Shopify custom themes and React applications.",
+            year: "Feb 2025 - July 2025",
+            title: "Frontend Dev - Internship",
+            company: "AAA Digital Media, Pakistan",
+            desc: "Built and maintained responsive UI components using React and Next.js. Integrated REST APIs and optimized performance through clean component structures and modern JavaScript practices.",
             active: false
         }
     ];
@@ -54,7 +56,7 @@ export default function About() {
 
                 {/* Sticky Sidebar */}
                 <div className="hidden lg:block lg:sticky lg:top-0 lg:h-screen">
-                    <div className="h-full flex flex-col justify-top">
+                    <div className="h-full flex flex-col justify-center">
                         <motion.div
                             initial="hidden"
                             whileInView="visible"
@@ -96,12 +98,11 @@ export default function About() {
                         transition={{ duration: 0.8 }}
                     >
                         <h3 className="text-sm font-bold text-slate-500 uppercase tracking-widest mb-8 flex items-center gap-4">
-                            01 / Philosophy
+                            01 / Profile
                             <span className="h-[1px] w-12 bg-slate-800" />
                         </h3>
                         <p className="text-2xl md:text-4xl text-neutral-300 leading-tight font-light tracking-tight max-w-3xl">
-                            I believe that <strong className="text-white font-medium">great software</strong> is born at the intersection of robust engineering
-                            and <span className="text-slate-400 italic font-serif">premium aesthetics</span>. I don't just write code; I build digital experiences that solve real problems.
+                            I am a <strong className="text-white font-medium">React Native & Frontend Developer</strong> with hands-on experience building production mobile apps and admin dashboards. I focus on <span className="text-slate-400 italic font-serif">scalable UI architecture</span> and API-driven systems to solve real business problems.
                         </p>
                     </motion.div>
 
@@ -136,7 +137,7 @@ export default function About() {
                                     <div className={`absolute -left-[53px] top-2 w-[11px] h-[11px] rounded-full ring-4 ring-black z-20 transition-colors duration-500 ${item.active ? 'bg-slate-300' : 'bg-slate-800'}`} />
 
                                     <span className="text-sm font-mono text-slate-500 mb-4 block underline decoration-slate-800 underline-offset-8 italic">
-                                        {item.year}
+                                        {item.year} — {item.company}
                                     </span>
                                     <h4 className="text-3xl font-bold text-white mb-4 tracking-tight">{item.title}</h4>
                                     <p className="text-xl text-neutral-400 max-w-xl leading-relaxed font-light">
@@ -147,7 +148,7 @@ export default function About() {
                         </div>
                     </div>
 
-                    {/* Section 3: Process */}
+                    {/* Section 3: Education */}
                     <motion.div
                         initial={{ opacity: 0, scale: 0.95 }}
                         whileInView={{ opacity: 1, scale: 1 }}
@@ -159,11 +160,17 @@ export default function About() {
                             03
                         </span>
 
-                        <h3 className="text-sm font-bold text-slate-500 uppercase tracking-widest mb-12">Process</h3>
-                        <p className="text-2xl md:text-3xl text-neutral-300 leading-snug font-light max-w-2xl">
-                            It starts with understanding the 'Why'. From there, I move to architecture, prototyping, and iterative development.
-                            I prioritize <strong className="text-white font-medium underline decoration-slate-500 underline-offset-8">clean, maintainable code</strong> over quick hacks.
-                        </p>
+                        <h3 className="text-sm font-bold text-slate-500 uppercase tracking-widest mb-12">Education</h3>
+                        <div className="space-y-8 relative z-10">
+                            <div>
+                                <h4 className="text-white font-bold text-2xl">MERN Stack Training Program</h4>
+                                <p className="text-slate-400">Expertizo University | 2024 - 2025</p>
+                            </div>
+                            <div>
+                                <h4 className="text-white font-bold text-2xl">Intermediate in CS</h4>
+                                <p className="text-slate-400">Ziauddin Intermediate Board | 2024 - 2026</p>
+                            </div>
+                        </div>
                     </motion.div>
 
                 </div>
